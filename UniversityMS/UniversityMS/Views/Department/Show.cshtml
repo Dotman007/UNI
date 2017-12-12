@@ -1,0 +1,60 @@
+﻿@using UniversityMS.Models
+@model UniversityMS.Models.Department
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@{
+    List<Department> departments = ViewBag.DepartmentList;
+}
+
+<html>
+    
+    <head>
+        
+    </head>
+    <body>
+        <br />
+        <h3 class="btn btn-primary" style="float:right;color:white">@Html.ActionLink("Add Department","Save")</h3>
+        <p>View All Department</p>
+        
+        <div></div>
+
+        <div class="col-md-offset-6 col-md-10" >
+            <fieldset>
+                <legend></legend>
+                <table class="grid" align="center" border="1"  >
+                    <tr style="text-align: center; border-right: 1px ; background-color: #22D7A0;">
+                        <th>Code</th>
+
+                        <th>Name</th>
+
+                    </tr>
+
+
+                    @foreach (Department aDepartment in departments)
+                    {
+                        <tr>
+                            <td class="success">@aDepartment.DeptCode</td>
+
+                            <td class="danger">@aDepartment.DeptName</td>
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+
+                    }
+
+                </table>
+
+            </fieldset>
+        </div>
+        
+        <script>
+
+        </script>
+
+
+    </body>
+
+</html>
+

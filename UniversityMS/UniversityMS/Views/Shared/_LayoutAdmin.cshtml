@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -University Management System</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker3.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/custom-styles.css">
+    <link rel="stylesheet" href="../../css/font-awesome.css">
+    <link rel="stylesheet" href="../../css/font-awesome-ie7.css">
+
+    <script src="../../js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+
+</head>
+<body>
+   
+    <div class="header-wrapper">
+        <div class="site-header">
+            <div class="container">
+                <div class="site-name">
+                    @* A lautech logo should be here *@
+                    <a href="/Home/Index"><h1><img src="../../img/lautechlogo.png" style="width :50px; height :70px" />E-lautech</h1></a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="menu">
+                    <div class="navbar">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <i class="fw-icon-th-list"></i>
+                        </a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav" style="color:white">
+                                @*<li class="active"><a href="/Home/Index">Home</a></li>*@
+
+                                
+                               
+                                        
+                                <li class="active">
+                                    <a href="/Department/Show">Departments</a>
+                                </li>
+                                <li>
+                                    <a href="/Course/Save">Add Course</a>
+                                </li>
+                                    
+                                
+                                @*<li>
+                                    <a href="/Student/Register">Register Student</a>
+                                </li>*@
+
+                                <li>
+                                    <a href="/Student/Index">Students</a>
+                                </li>
+
+                                @*<li>
+                                    <a href="/EnrollCourse/Create">Enroll Student in a Course</a>
+                                </li>*@
+
+                                <li>
+                                    <a href="/EnrollCourse/SaveResult"> Save Result</a>
+                                </li>
+
+                                <li>
+                                    <a href="/EnrollCourse/ViewResult"> View Result</a>
+                                </li>
+                                <li><a href="/EnrollCourse/Create">Register Course</a></li>
+                               <li>@Html.Partial("_LoginPartial")</li>
+                               
+
+                            </ul>
+                        <br />
+                        <div class="" style="float: right">
+                            </div>
+                            
+                        </div><!--/.nav-collapse -->
+                    </div>
+                    <div class="mini-menu">
+                        @*<label>
+                                <select class="selectnav">
+                                    <option value="#" selected="">Home</option>
+                                    <option value="#">About</option>
+                                    <option value="#">→ Another action</option>
+                                    <option value="#">→ Something else here</option>
+                                    <option value="#">→ Another action</option>
+                                    <option value="#">→ Something else here</option>
+                                    <option value="#">Services</option>
+                                    <option value="#">Work</option>
+                                    <option value="#">Contact</option>
+                                </select>
+                            </label>*@
+                        <br />
+                        <ul class="nav" style="">
+                            <li><a href="/Home/Index">Home</a></li>
+
+                            <li><a href="/Student/Register">Student Registration</a></li>
+
+                            <li><a href="/EnrollCourse/Create">Register Course</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="/Account/Register">Admin Login</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="text-align:center">
+            <p>Designed and Developed by Toyin and Team</p><br />
+            <p>&copy; @DateTime.Now.Year </p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    @*<script src="../../js/jquery-1.9.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>*@
+    <script>
+        $('#myCarousel').carousel({
+            interval: 1800
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#Date").datepicker({ format: 'yyyy-mm-dd', value: '2016-05-09' });
+            $("#enrollDate").datepicker({ format: 'yyyy-mm-dd', value: '2016-05-09' });
+            $("#Date").val("2016-05-09");
+            $("#enrollDate").val("2016-05-09");
+        });
+    </script>
+</body>
+</html>
